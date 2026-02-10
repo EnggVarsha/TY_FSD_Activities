@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+.scene {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    margin: auto;
+    background: linear-gradient(skyblue, green);
+    border: 2px solid #333;
+}
+
+.scene img,
+.scene input[type="image"] {
+    position: absolute;
+    transition: transform 0.5s ease, border-color 0.5s ease;
+}
+
+#sun {
+    top: 20px;
+    right: 50px;
+    width: 100px;
+    cursor: pointer;
+}
+
+#tree {
+    bottom: 0;
+    left: 50px;
+    width: 150px;
+}
+
+#bird {
+    top: 100px;
+    left: 250px;
+    width: 80px;
+}
+
+#flower {
+    bottom: 20px;
+    right: 100px;
+    width: 80px;
+    border: none;
+}
+footer{
+    te
+}

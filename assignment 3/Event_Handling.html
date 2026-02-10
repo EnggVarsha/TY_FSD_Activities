@@ -1,17 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment 3</title>
-    <!-- You can link your CSS file here -->
+    <title>Interactive Scenery</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <h1>Welcome to Assignment 3</h1>
-    <p>This is a basic HTML structure to start your project.</p>
 
-    <!-- Add your content here -->
+<body onload="pageLoaded()" onunload="pageUnloaded()" onresize="pageResized()">
+
+    <h1>Interactive Scenery with Events</h1>
+
+    <div class="scene">
+        <!-- Sun: onclick -->
+        <img src="sun.png" alt="Sun" id="sun" onclick="sunClicked()">
+
+        <!-- Tree: onmouseover / onmouseout -->
+        <img src="tree.png" alt="Tree" id="tree" onmouseover="treeHovered()" onmouseout="treeUnhovered()">
+
+        <!-- Bird: oncontextmenu -->
+        <img src="bird.png" alt="Bird" id="bird" oncontextmenu="birdRightClick(event)">
+
+        <!-- Flower: onfocus / onblur -->
+        <input type="image" src="flower.png" alt="Flower" id="flower" onfocus="flowerFocus(this)"
+            onblur="flowerBlur(this)">
+    </div>
+
+    <section>
+        <h2>Keyboard & Form Events</h2>
+        <input type="text" placeholder="Type here..." onkeydown="keyDown()" onkeyup="keyUp()" onkeypress="keyPress()">
+
+        <select onchange="selectionChanged()">
+            <option value="">Choose</option>
+            <option>Option 1</option>
+            <option>Option 2</option>
+        </select>
+
+        <form onsubmit="formSubmitted(event)">
+            <input type="text" placeholder="Enter name">
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <p id="message">Interact with the scenery!</p>
+
+    <footer>
+        <p>&copy; SEE THE MAGIC....</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
+
 </html>
