@@ -50,7 +50,7 @@ A modern, interactive web application that helps users create professional resum
 
 ## 🚀 Live Demo
 
-[View Live Demo](#) (Add your deployed link here)
+[[View Live Demo](#](http://127.0.0.1:5500/index.html)) (Add your deployed link here)
 
 ## 📋 Prerequisites
 
