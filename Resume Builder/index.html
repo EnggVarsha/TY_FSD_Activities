@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Resume Builder with Photo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<!-- LEFT - Form Panel -->
+<div class="form-panel">
+  <h2 id="stepTitle">Header</h2>
+
+  <div class="template-selector">
+    <label for="template">Template Style:</label>
+    <select id="template" onchange="changeTemplate()">
+      <option value="classic">Classic</option>
+      <option value="modern">Modern</option>
+      <option value="minimal">Minimal</option>
+      <option value="professional">Professional</option>
+    </select>
+  </div>
+
+  <!-- Step 1: Header with Photo Upload -->
+  <div class="step active">
+    <h3>Personal Information</h3>
+    
+    <!-- Profile Picture Upload -->
+    <div class="photo-upload-container">
+      <label for="photoUpload">Profile Picture:</label>
+      <div class="photo-preview-wrapper">
+        <img id="photoPreview" src="https://via.placeholder.com/100" alt="Profile Preview" class="photo-preview">
+        <div class="photo-actions">
+          <input type="file" id="photoUpload" accept="image/*" onchange="handlePhotoUpload(event)">
+          <button type="button" class="remove-photo-btn" onclick="removePhoto()" title="Remove photo">✕</button>
+        </div>
+      </div>
+    </div>
+
+    <input id="name" placeholder="Full Name" value="John Doe">
+    <input id="email" placeholder="Email" value="john.doe@example.com">
+    <input id="phone" placeholder="Phone" value="(555) 123-4567">
+    <input id="location" placeholder="Location" value="New York, NY">
+  </div>
+
+  <!-- Step 2: Experience -->
+  <div class="step">
+    <h3>Work Experience</h3>
+    <input id="job" placeholder="Job Role / Title" value="Frontend Developer">
+    <textarea id="experience" placeholder="Experience (one per line)" rows="5">• Built responsive web applications using HTML, CSS, and JavaScript
+• Collaborated with team members in an Agile environment
+• Improved UI performance by optimizing code and assets
+• Implemented responsive designs for mobile and desktop views</textarea>
+    <button class="suggest-btn" onclick="suggestExperience()">✨ Suggest Experience</button>
+  </div>
+
+  <!-- Step 3: Education -->
+  <div class="step">
+    <h3>Education</h3>
+    <input id="degree" placeholder="Degree" value="B.S. Computer Science">
+    <input id="college" placeholder="College/University" value="University of Technology">
+    <input id="year" placeholder="Graduation Year" value="2020">
+  </div>
+
+  <!-- Step 4: Skills -->
+  <div class="step">
+    <h3>Skills</h3>
+    <textarea id="skills" placeholder="Skills (comma separated)" rows="3">HTML, CSS, JavaScript, Python, React, Node.js, Git</textarea>
+    <button class="suggest-btn" onclick="suggestSkills()">✨ Suggest Skills</button>
+  </div>
+
+  <!-- Step 5: Summary -->
+  <div class="step">
+    <h3>Professional Summary</h3>
+    <textarea id="summary" placeholder="Professional Summary" rows="4">Motivated Frontend Developer with strong skills in HTML, CSS, JavaScript, React, Node.js, Git. Passionate about learning and building real-world applications. Seeking opportunities to contribute to innovative projects and grow professionally.</textarea>
+    <button class="suggest-btn" onclick="generateSummary()">✨ Auto Generate Summary</button>
+  </div>
+
+  <!-- Navigation Buttons -->
+  <div class="buttons">
+    <button class="nav-btn" onclick="prevStep()">← Back</button>
+    <button class="nav-btn primary" onclick="nextStep()">Next →</button>
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="action-buttons">
+    <button class="download" onclick="downloadPDF()">📥 Download PDF</button>
+    <button class="score" onclick="scoreResume()">📊 Check Resume Score</button>
+  </div>
+
+  <!-- Score Result -->
+  <div id="scoreResult" class="score-result"></div>
+</div>
+
+<!-- RIGHT - Preview Panel -->
+<div class="preview-panel">
+  <div id="resume" class="resume classic">
+    <div class="resume-header-with-photo" id="resumeHeaderContainer">
+      <!-- Photo will be inserted here via JavaScript -->
+      <div class="resume-header-text">
+        <h1 id="pName">John Doe</h1>
+        <p id="pContact">john.doe@example.com | (555) 123-4567 | New York, NY</p>
+      </div>
+    </div>
+
+    <div class="resume-section">
+      <h3>Summary</h3>
+      <p id="pSummary">Motivated Frontend Developer with strong skills in HTML, CSS, JavaScript, React, Node.js, Git. Passionate about learning and building real-world applications. Seeking opportunities to contribute to innovative projects and grow professionally.</p>
+    </div>
+
+    <div class="resume-section">
+      <h3>Experience</h3>
+      <p id="pExp">Frontend Developer
+• Built responsive web applications using HTML, CSS, and JavaScript
+• Collaborated with team members in an Agile environment
+• Improved UI performance by optimizing code and assets
+• Implemented responsive designs for mobile and desktop views</p>
+    </div>
+
+    <div class="resume-section">
+      <h3>Education</h3>
+      <p id="pEdu">B.S. Computer Science - University of Technology (2020)</p>
+    </div>
+
+    <div class="resume-section">
+      <h3>Skills</h3>
+      <ul id="pSkills">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Python</li>
+        <li>React</li>
+        <li>Node.js</li>
+        <li>Git</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
