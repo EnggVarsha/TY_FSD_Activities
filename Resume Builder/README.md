@@ -2,7 +2,7 @@
 
 A modern, interactive web application that helps users create professional resumes with ease. Built with HTML, CSS, and JavaScript, this tool features a live preview, multiple templates, AI-powered suggestions, and a resume scoring system.
 
-![Resume Builder Preview](https://via.placeholder.com/800x400?text=Resume+Builder+Preview)
+
 
 ## ✨ Features
 
@@ -48,9 +48,7 @@ A modern, interactive web application that helps users create professional resum
 - Preserves all formatting and photos
 - Letter-size format
 
-## 🚀 Live Demo
 
-[[View Live Demo](#](http://127.0.0.1:5500/index.html)) (Add your deployed link here)
 
 ## 📋 Prerequisites
 
